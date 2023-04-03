@@ -14,8 +14,8 @@ class UserDao:
     def get_all(self):
         return self.session.query(User).all()
 
-    def create(self, user_id):
-        new_user = User(**user_id)
+    def create(self, user_d):
+        new_user = User(email=user_d['email'], name=user_d['name'], surname=user_d['surname'], role=user_d['role'], favorite_genre=user_d['favorite_genre'])
         self.session.add(new_user)
         self.session.commit()
         return new_user
