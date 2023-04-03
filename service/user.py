@@ -33,7 +33,6 @@ class UserService:
 
     def update_partial(self, data, uid):
         user = self.get_one(uid)
-        print(user.password)
         if "password_1" and "password_2" in data:
             if self.get_hash(data["password_1"]) == user.password:
                 user.password = self.get_hash(data["password_2"])
@@ -61,9 +60,6 @@ class UserService:
             Config.PWD_HASH_ITERATIONS
         )
         return base64.b64encode(hash_digest)
-
-    def get_by_email(self, email):
-        return self.dao.get_by_email(email)
 
     def compare_password(self, password_hash, other_password):
         decoded_digist = base64.b64decode(password_hash)
