@@ -3,7 +3,7 @@ from implemented import user_service
 from dao.model.user import UserSchema
 from flask import request
 
-user_namespace = Namespace("user")
+user_namespace = Namespace("users")
 
 user_schema = UserSchema()
 users_schema = UserSchema(many=True)
