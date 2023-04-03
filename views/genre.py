@@ -4,7 +4,7 @@ from implemented import genre_service
 from dao.model.genre import GenreSchema
 from decorators import auth_required
 
-genre_namespace = Namespace("genre")
+genre_namespace = Namespace("genres")
 
 genre_schema = GenreSchema()
 genres_schema = GenreSchema(many=True)
