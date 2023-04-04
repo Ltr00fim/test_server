@@ -2,7 +2,7 @@ from dao.model.genre import Genre
 
 
 class GenreService:
-    def __init__(self, dao: Genre):
+    def __init__(self, dao):
         self.dao = dao
 
     def get_all(self):
