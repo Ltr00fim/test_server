@@ -2,7 +2,7 @@ from dao.model.director import Director
 
 
 class DirectorService:
-    def __init__(self, dao: Director):
+    def __init__(self, dao):
         self.dao = dao
 
     def get_all(self):
