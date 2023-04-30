@@ -1,7 +1,8 @@
+import os
+
 class Config:
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db'
-    # postgres://test_y49s_user:wJKnItKoR7mP2YEKwyLc5iOQSZynP38F@dpg-ch727v2k728iqr28s9ag-a.oregon-postgres.render.com/test_y49s
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JSON_AS_ASCII = False
     RESTX_JSON = {'ensure_ascii': False, 'indent': 2}
